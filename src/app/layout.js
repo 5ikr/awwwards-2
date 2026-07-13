@@ -1,6 +1,10 @@
+
 import "./globals.css";
-import Header from "@/components/Header";
 import localFont from "next/font/local";
+import Header from "@/components/Header";
+import {ReactLenis} from "lenis/react";
+import Hero from "@/components/Hero";
+import React from 'react'
 
 export const clashDisplay = localFont({
   src: [
@@ -44,28 +48,18 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
+
   return (
-    <html
-      lang="en">
-      <body className={`${clashDisplay.className} antialiased`}>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            const originalWarn = console.warn;
-            console.warn = function(...args) {
-              if (args[0]?.includes?.('THREE.Clock') || args[0]?.includes?.('deprecated')) {
-                return;
-              }
-              originalWarn.apply(console, args);
-            };
-          `,
-        }}
-      />
+      <html
+          lang="en">
+      <body className={`${clashDisplay.className} antialiased z-20`}>
+
       <Header />
-          <main className="min-h-[200vh] bg-white relative z-40 w-full">
-            {children}
-          </main>
+      <main className="min-h-[200vh] bg-white relative w-full">
+        {children}
+      </main>
       </body>
-    </html>
+      </html>
   );
 }

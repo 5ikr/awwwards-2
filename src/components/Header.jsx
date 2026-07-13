@@ -110,7 +110,7 @@ const Header = () => {
                 style={
                     showBurger ? { opacity: "1", transition: "all", duration: "100" } : { opacity: "0" }
                 }
-                ref={navRef} className="fixed z-50 flex flex-col justify-between w-full h-full px-10 uppercase bg-black text-white/80 py-28 gap-y-10 md:w-1/2 md:left-1/2">
+                ref={navRef} className="fixed z-20 flex flex-col justify-between w-full h-full px-10 uppercase bg-black text-white/80 py-28 gap-y-10 md:w-1/2 md:left-1/2">
                 <ul className="flex flex-col w-full h-auto items-start gap-3">
                     {["Home","Services","About","Work","Contact"].map((item,index) => (
                         <div ref={(el) => linksRef.current[index] = el} key={index}>
@@ -154,10 +154,12 @@ const Header = () => {
 
                 </div>
             </nav>
-            <div onClick={toggleMenu} className="fixed cursor-pointer z-50 w-14 h-14 transition-all duration-300 rounded-full md:w-20 md:h-20 top-4 right-10 bg-black flex flex-col items-center justify-center gap-1"
-                 style={
-                     showBurger ? { clipPath: "circle(50% at 50% 50%)" } : { clipPath: "circle(0% at 50% 50%)" }
-                 }
+            <div
+                onClick={toggleMenu}
+                className="fixed cursor-pointer z-30 w-14 h-14 transition-all duration-300 rounded-full md:w-20 md:h-20 top-4 right-10 bg-black flex flex-col items-center justify-center gap-1"
+                style={
+                    showBurger ? { clipPath: "circle(50% at 50% 50%)" } : { clipPath: "circle(0% at 50% 50%)" }
+                }
             >
                 <span ref={topLineRef} className="w-8 h-0.5 bg-white/90"></span>
                 <span ref={bottomLineRef} className="w-8 h-0.5 bg-white/90"></span>
