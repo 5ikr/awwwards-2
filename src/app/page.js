@@ -27,7 +27,7 @@ const Page = () => {
                         <h1 className='text-white text-2xl'>Loading</h1>
                         <p className='text-white/80 text-2xl transition-all duration-100'>{Math.floor(progress)}%</p>
                     </div>
-                    <div className="w-[400px] h-2 bg-white/20 transition-all duration-200 rounded-full">
+                    <div className="w-[250px] md:w-[400px] h-2 bg-white/20 transition-all duration-200 rounded-full">
                         <div className="h-full bg-white/80 transition-all duration-200 rounded-full"
                             style={{ width: `${Math.floor(progress)}%` }}
                         ></div>

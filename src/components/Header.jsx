@@ -110,7 +110,7 @@ const Header = () => {
                 style={
                     showBurger ? { opacity: "1", transition: "all", duration: "100" } : { opacity: "0" }
                 }
-                ref={navRef} className="fixed z-20 flex flex-col justify-between w-full h-full px-10 uppercase bg-black text-white/80 py-28 gap-y-10 md:w-1/2 md:left-1/2">
+                ref={navRef} className="fixed z-20 flex flex-col justify-between w-full h-full px-10 uppercase bg-black text-white/80 py-28 gap-y-10 lg:w-full  xl:w-1/2 xl:left-1/2">
                 <ul className="flex flex-col w-full h-auto items-start gap-3">
                     {["Home","Services","About","Work","Contact"].map((item,index) => (
                         <div ref={(el) => linksRef.current[index] = el} key={index}>
@@ -145,7 +145,7 @@ const Header = () => {
                                         link: "https://www.linkedin.com/company/",
                                     }].map((item) => (
                                     <a key={item.media} className='hover:text-white transition-all duration-200' href={item.link}>
-                                        {"{ "}{"   "} {item.media}{"   "} {" }"}
+                                        {item.media}
                                     </a>
                                 ))}
                             </span>
