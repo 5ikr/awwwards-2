@@ -111,24 +111,24 @@ const Header = () => {
                     showBurger ? { opacity: "1", transition: "all", duration: "100" } : { opacity: "0" }
                 }
                 ref={navRef} className="fixed z-50 flex flex-col justify-between w-full h-full px-10 uppercase bg-black text-white/80 py-28 gap-y-10 md:w-1/2 md:left-1/2">
-                    <ul className="flex flex-col w-full h-auto items-start gap-3">
-                        {["Home","Services","About","Work","Contact"].map((item,index) => (
-                            <div ref={(el) => linksRef.current[index] = el} key={index}>
-                                <Link
-                                    to={item.toLowerCase()} onClick={toggleMenu} className='uppercase cursor-pointer text-5xl md:text-8xl font-medium hover:text-white transition-all duration-300'>
-                                    {item}
-                                </Link>
-                            </div>
-                        ))}
-                    </ul>
-                    <div ref={contactRef} className="flex flex-col md:flex-row gap-4  w-full justify-between items-start md:items-center">
-                        <p className="flex flex-col text-white/70">
-                            Email: {" "}
-                            <a href="#" className="font-medium text-white/90">hello@gmail.com</a>
-                        </p>
-                        <p className="flex flex-col">
-                            Social Media: {" "}
-                            <span className="flex flex-col md:flex-row gap-2 font-medium text-white/90">
+                <ul className="flex flex-col w-full h-auto items-start gap-3">
+                    {["Home","Services","About","Work","Contact"].map((item,index) => (
+                        <div ref={(el) => linksRef.current[index] = el} key={index}>
+                            <Link
+                                to={item.toLowerCase()} onClick={toggleMenu} className='uppercase cursor-pointer text-5xl md:text-8xl font-medium hover:text-white transition-all duration-300'>
+                                {item}
+                            </Link>
+                        </div>
+                    ))}
+                </ul>
+                <div ref={contactRef} className="flex flex-col md:flex-row gap-4  w-full justify-between items-start md:items-center">
+                    <p className="flex flex-col text-white/70">
+                        Email: {" "}
+                        <a href="#" className="font-medium text-white/90">hello@gmail.com</a>
+                    </p>
+                    <p className="flex flex-col">
+                        Social Media: {" "}
+                        <span className="flex flex-col md:flex-row gap-2 font-medium text-white/90">
                                 {[  {
                                     media: "Instagram",
                                     link: "https://www.instagram.com/instagram/",
@@ -149,14 +149,14 @@ const Header = () => {
                                     </a>
                                 ))}
                             </span>
-                        </p>
+                    </p>
 
 
                 </div>
             </nav>
             <div onClick={toggleMenu} className="fixed cursor-pointer z-50 w-14 h-14 transition-all duration-300 rounded-full md:w-20 md:h-20 top-4 right-10 bg-black flex flex-col items-center justify-center gap-1"
                  style={
-                showBurger ? { clipPath: "circle(50% at 50% 50%)" } : { clipPath: "circle(0% at 50% 50%)" }
+                     showBurger ? { clipPath: "circle(50% at 50% 50%)" } : { clipPath: "circle(0% at 50% 50%)" }
                  }
             >
                 <span ref={topLineRef} className="w-8 h-0.5 bg-white/90"></span>

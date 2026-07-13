@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+.nav-hidden {
+    transform: translateX(100%);
+}
