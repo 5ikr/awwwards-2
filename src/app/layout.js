@@ -48,6 +48,19 @@ export default function RootLayout({ children }) {
     <html
       lang="en">
       <body className={`${clashDisplay.className} antialiased`}>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            const originalWarn = console.warn;
+            console.warn = function(...args) {
+              if (args[0]?.includes?.('THREE.Clock') || args[0]?.includes?.('deprecated')) {
+                return;
+              }
+              originalWarn.apply(console, args);
+            };
+          `,
+        }}
+      />
       <Header />
           <main className="min-h-[200vh] bg-white relative z-40 w-full">
             {children}

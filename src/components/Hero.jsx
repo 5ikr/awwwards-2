@@ -4,6 +4,8 @@ import React, {useRef} from 'react'
 import AnimatedTextLines from "@/ui/AnimatedTextLines";
 import gsap from "gsap";
 import {useGSAP} from "@gsap/react";
+import {Canvas} from "@react-three/fiber";
+import {Planet} from "@/ui/Planet";
 
 const Hero = () => {
 
@@ -38,7 +40,7 @@ results driven webs/apps`
                 <div  ref={contentRef} className="w-full h-svh grid grid-rows-[2.75fr_1.25fr]  sm:grid-rows-[2fr_1fr] lg:grid-rows-[1.75fr_1.25fr]"
                 >
                     <div className="flex justify-end border-b border-b-black"
-                         style={{clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%);"}}>
+                         style={{clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",}}>
                         <div className="w-full overflow-hidden h-auto pt-40 flex flex-col justify-end px-10 "
 
                              ref={headerRef}
@@ -54,6 +56,15 @@ results driven webs/apps`
                         <AnimatedTextLines text={text} className='uppercase text-xl sm:text-2xl lg:text-4xl  text-right tracking-tight value-text-responsive'/>
                     </div>
                 </div>
+
+                <figure className="absolute inset-0 -z-50"
+                        style={{ width: "100vw", height: "100vh" }}
+                >
+                    <Canvas shadows camera={{ position: [0,0,-10], fov: 17.5, near: 1, far: 20 }}>
+                        <Planet />
+                    </Canvas>
+                </figure>
+
             </section>
         </>
     )
