@@ -21,7 +21,9 @@ const Service = () => {
 
                 <div className="w-full h-full servicee flex">
                     <div className="w-full h-full">
+{/*
                         <AnimatedHeadLines trigger={true} upTitle='Behind the scene, Beyond the screen' title1='Service' title2={null} desc={text} colour='white' classname="z-10 h-auto my-20 flex flex-col gap-9 justify-center"/>
+*/}
                     </div>
                 </div>
 

@@ -37,7 +37,7 @@ const AnimatedHeadLines = ({upTitle, title1, title2, desc, colour, classname, tr
         <>
             <div  ref={contentRef} className={classname}
             >
-                <div className={`flex justify-end border-b border-b-${colour}`}
+                <div className={`flex w-full overflow-x-hidden justify-end border-b border-b-${colour}`}
                      style={{clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",}}>
                     <div className="w-full overflow-hidden h-auto flex flex-col justify-end px-10 "
 
