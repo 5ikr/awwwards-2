@@ -1,9 +1,20 @@
 @import "tailwindcss";
 
 html, body {
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 .nav-hidden {
     transform: translateX(100%);
+}
+
+.service-sticky {
+    top: 0px;
+}
+
+@media (min-width: 48rem) {
+    .service-sticky {
+        top: var(--top-desktop);
+        margin-bottom: var(--mb-desktop);
+    }
 }

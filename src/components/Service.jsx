@@ -3,7 +3,6 @@
 import React, {useRef} from 'react'
 import AnimatedHeadLines from "@/ui/AnimatedHeadLines";
 import {servicesData} from "@/constants";
-import {useMediaQuery} from "react-responsive";
 
 const Service = () => {
 
@@ -12,8 +11,6 @@ const Service = () => {
     const text = `I build secure, high-performance full-stack apps 
                         with smooth UX to drive growth
                         not headaches.`
-
-    const isDesktop = useMediaQuery({ minWidth: "48rem" });
 
     return (
         <>
@@ -27,17 +24,11 @@ const Service = () => {
 
 
                             {servicesData.map((item, index) => (
-                                <div className="sticky w-full h-full bg-black
-
-                                "
-                                     style={
-                                    isDesktop ?
-                                          {
-                                                 top: `calc(10vh + ${index * 5}em)`,
-                                                 marginBottom: `${(servicesData.length - index - 1) * 5}rem`,
-                                             } : {top : '0px'}
-
-                                     }
+                                <div className="sticky w-full h-full bg-black service-sticky"
+                                     style={{
+                                         "--top-desktop": `calc(10vh + ${index * 5}em)`,
+                                         "--mb-desktop": `${(servicesData.length - index - 1) * 5}rem`,
+                                     }}
                                      key={index} >
                                     <div className='flex flex-col px-14 pb-10 pt-5 gap-3 border-t-2 border-white/80'>
                                         <h2 className='text-4xl md:text-6xl'>{item.title}</h2>
