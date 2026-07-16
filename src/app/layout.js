@@ -2,8 +2,6 @@
 import "./globals.css";
 import localFont from "next/font/local";
 import Header from "@/components/Header";
-import {ReactLenis} from "lenis/react";
-import Hero from "@/components/Hero";
 import React from 'react'
 
 export const clashDisplay = localFont({
@@ -56,7 +54,7 @@ export default function RootLayout({ children }) {
       <body className={`${clashDisplay.className} antialiased z-20`}>
 
       <Header />
-      <main className="min-h-[200vh] bg-white relative w-full">
+      <main className="min-h-[200vh] bg-[#E5E5E0] relative w-full">
         {children}
       </main>
       </body>
