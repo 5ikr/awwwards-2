@@ -3,18 +3,44 @@
 import React, {useRef} from 'react'
 import AnimatedHeadLines from "@/ui/AnimatedHeadLines";
 import {servicesData} from "@/constants";
+import {useGSAP} from "@gsap/react";
+import gsap from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Service = () => {
 
     const secRef = useRef(null);
+    const serviceRef = useRef([]);
 
     const text = `I build secure, high-performance full-stack apps 
                         with smooth UX to drive growth
                         not headaches.`
 
+    useGSAP(() => {
+
+        serviceRef.current.forEach((el) => {
+
+            if(!el) return;
+
+            gsap.from(el, {
+                y: 200,
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'top 80%',
+                },
+                duration: 1,
+                ease: 'circ.out'
+            })
+
+        })
+
+    },[])
+
     return (
         <>
-            <section ref={secRef} className='bg-black text-white rounded-t-4xl w-full min-h-screen flex flex-col justify-start'>
+            <section ref={secRef} className='bg-black text-white rounded-t-4xl w-full min-h-screen flex flex-col justify-start' id='services'>
 
                 <div className="w-full h-full servicee flex">
                     <div className="w-full h-full">
@@ -24,7 +50,7 @@ const Service = () => {
 
 
                             {servicesData.map((item, index) => (
-                                <div className="sticky w-full h-full bg-black service-sticky"
+                                <div ref={(el) => serviceRef.current[index] = el} className="sticky w-full h-full bg-black service-sticky"
                                      style={{
                                          "--top-desktop": `calc(10vh + ${index * 5}em)`,
                                          "--mb-desktop": `${(servicesData.length - index - 1) * 5}rem`,

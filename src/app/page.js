@@ -7,6 +7,8 @@ import Hero from "@/components/Hero";
 import {useProgress} from "@react-three/drei";
 import ServiceSummary from "@/components/ServiceSummary";
 import Service from "@/components/Service";
+import About from "@/components/About";
+import Works from "@/components/Works";
 
 const Page = () => {
 
@@ -33,6 +35,8 @@ const Page = () => {
                 <Hero />
                 <ServiceSummary />
                 <Service />
+                <About />
+                <Works />
             </div>
         </ReactLenis>
     )

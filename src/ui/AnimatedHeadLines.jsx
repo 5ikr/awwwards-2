@@ -51,7 +51,7 @@ const AnimatedHeadLines = ({upTitle, title1, title2, desc, colour, classname, tr
                     </div>
                 </div>
                 <div className="px-10 w-full h-auto flex items-center justify-end">
-                    <AnimatedTextLines text={desc} className='uppercase text-xl sm:text-2xl lg:text-4xl  text-right tracking-tight value-text-responsive pt-10'/>
+                    <AnimatedTextLines text={desc} className='uppercase text-xl sm:text-2xl lg:text-4xl  text-right tracking-tight value-text-responsive'/>
                 </div>
             </div>
         </>

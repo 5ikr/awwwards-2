@@ -17,7 +17,7 @@ results driven webs/apps`
 
     return (
         <>
-            <section id='hero' className='min-h-screen w-full bg-[#E5E5E0] flex flex-col items-center justify-center'>
+            <section id='home' className='min-h-screen w-full bg-[#E5E5E0] flex flex-col items-center justify-center'>
 
                 <AnimatedHeadLines upTitle='404 bug not found' title1='Ali' title2='Sanati' desc={text} colour='black' classname="z-10 w-full overflow-hidden h-svh grid grid-rows-[2.75fr_1.25fr]  sm:grid-rows-[2fr_1fr] lg:grid-rows-[1.75fr_1fr]" />
 
