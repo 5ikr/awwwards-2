@@ -44,14 +44,14 @@ const AnimatedHeadLines = ({upTitle, title1, title2, desc, colour, classname, tr
                          ref={headerRef}
                     >
                         <p className="uppercase text-xs sm:text-sm lg:text-lg tracking-[6px]">{upTitle}</p>
-                        <h1 className="flex flex-col md:flex-row md:gap-11 -mb-5 sm:-mb-6 lg:-mb-9  text-8xl sm:text-9xl lg:text-[10rem] font-medium uppercase">
+                        <h1 className="flex flex-col md:flex-row md:gap-11 -mb-5 sm:-mb-6 lg:-mb-9  text-7xl sm:text-9xl lg:text-[10rem] font-medium uppercase">
                             <span className="">{title1}</span>
                             <span className="">{title2}</span>
                         </h1>
                     </div>
                 </div>
                 <div className="px-10 w-full h-auto flex items-center justify-end">
-                    <AnimatedTextLines text={desc} className='uppercase text-xl sm:text-2xl lg:text-4xl  text-right tracking-tight value-text-responsive'/>
+                    <AnimatedTextLines text={desc} className='uppercase text-lg sm:text-2xl lg:text-4xl  text-right tracking-tight value-text-responsive'/>
                 </div>
             </div>
         </>
