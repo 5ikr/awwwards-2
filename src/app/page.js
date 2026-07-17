@@ -9,6 +9,8 @@ import ServiceSummary from "@/components/ServiceSummary";
 import Service from "@/components/Service";
 import About from "@/components/About";
 import Works from "@/components/Works";
+import ContactSummary from "@/components/ContactSummary";
+import Contacts from "@/components/Contacts";
 
 const Page = () => {
 
@@ -37,6 +39,8 @@ const Page = () => {
                 <Service />
                 <About />
                 <Works />
+                <ContactSummary />
+                <Contacts />
             </div>
         </ReactLenis>
     )

@@ -6,6 +6,9 @@ import {projects} from "@/constants";
 import {Icon} from "@iconify/react";
 import gsap from "gsap";
 import {useGSAP} from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger)
 
 const Works = () => {
 
@@ -17,6 +20,7 @@ const Works = () => {
 
     const previewRef = useRef(null);
     const overlayRef = useRef([]);
+    const projectRef = useRef([]);
 
     const moveX = useRef(null);
     const moveY = useRef(null);
@@ -31,6 +35,17 @@ const Works = () => {
         moveY.current = gsap.quickTo(previewRef.current, "y", {
             duration: 2,
             ease: "power3.out"
+        })
+        gsap.from('#project',{
+            y: 100,
+            opacity: 0,
+            delay: 0.5,
+            duration: 1,
+            ease: "back.out",
+            stagger: 0.3,
+            scrollTrigger: {
+                trigger: '#project',
+            }
         })
     })
 
@@ -104,7 +119,7 @@ const Works = () => {
                 </div>
             </div>
 
-            <div onMouseMove={handleMouseMove} className="relative z-0 w-full h-full flex flex-col pb-10" >
+            <div id='project' onMouseMove={handleMouseMove} className="relative z-0 w-full h-full flex flex-col pb-10" >
                 {projects.map((project, index) => (
                     <div key={index} className='relative py-5 flex flex-col w-full group' onMouseEnter={() => handleMouseEnter(index)} onMouseLeave={() => handleMouseLeave(index)}>
 
