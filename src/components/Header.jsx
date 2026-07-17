@@ -110,12 +110,12 @@ const Header = () => {
                 style={
                     showBurger ? { x: '100%', transition: "all", duration: "100" } : { x: '0%' }
                 }
-                ref={navRef} className="fixed z-20 flex flex-col justify-between w-full h-full px-10 uppercase bg-black text-white/80 py-28 gap-y-10 lg:w-full  xl:w-1/2 xl:left-1/2">
+                ref={navRef} className="fixed z-20 flex flex-col justify-between w-full h-full px-10 uppercase bg-black text-white/80 py-16 gap-y-10 lg:w-full  xl:w-1/2 xl:left-1/2">
                 <ul className="flex flex-col w-full h-auto items-start gap-3">
                     {["Home","Services","About","Works","Contact"].map((item,index) => (
                         <div ref={(el) => linksRef.current[index] = el} key={index}>
                             <Link
-                                to={item.toLowerCase()} onClick={toggleMenu} className='uppercase cursor-pointer text-5xl md:text-8xl font-medium hover:text-white transition-all duration-300' smooth
+                                to={item.toLowerCase()} onClick={toggleMenu} className='uppercase cursor-pointer text-5xl md:text-7xl font-medium hover:text-white transition-all duration-300' smooth
                                 offset={0}
                                 duration={2000}>
                                 {item}
